@@ -25,14 +25,17 @@ public class Frame extends JPanel {
         for (int x = 0; x < Constants.WINDOW_WIDTH; x ++) {
             for (int y = 0; y < Constants.WINDOW_HEIGHT; y++) {
                 Color col = new Color((int)(255 * (double) x / Constants.WINDOW_WIDTH), (int)(255 * (double) y / Constants.WINDOW_WIDTH), 0);
-                img.setRGB(x, y, col.getRGB());
+                img.setRGB(x, y, new Color(0, 255, 0).getRGB());
             }
         }
+
+        Utils.drawLine(img, new Vector2Int(100, 200), new Vector2Int(200, 300));
 
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(img, null, null);
 
    }
+
 
    @Override
    public Dimension getPreferredSize() {
