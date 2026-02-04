@@ -29,7 +29,7 @@ public class Frame extends JPanel {
             }
         }
 
-        Utils.drawLine(img, new Vector2Int(100, 200), new Vector2Int(200, 300));
+        Utils.drawTriangle(img, new Vector2Int(100, 200), new Vector2Int(200, 300), new Vector2Int(0, 0));
 
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(img, null, null);

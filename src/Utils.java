@@ -40,4 +40,10 @@ public class Utils {
         }
         
     }
+
+    public static void drawTriangle(BufferedImage img, Vector2Int p1, Vector2Int p2, Vector2Int p3) {
+        Utils.drawLine(img, p1, p2);
+        Utils.drawLine(img, p2, p3);
+        Utils.drawLine(img, p3, p1);
+    }
 }
