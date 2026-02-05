@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.util.Random;
 
 import javax.swing.*;
 
@@ -29,7 +30,9 @@ public class Frame extends JPanel {
             }
         }
 
-        Utils.drawTriangle(img, new Vector2(100.0, 200.0), new Vector2(200.0, 300.0), new Vector2(0.0, 0.0));
+        Random rand = new Random();
+
+        Utils.drawTriangle(img, new Vector2(rand.nextDouble() * Constants.WINDOW_WIDTH, rand.nextDouble() * Constants.WINDOW_HEIGHT), new Vector2(rand.nextDouble() * Constants.WINDOW_WIDTH, rand.nextDouble() * Constants.WINDOW_HEIGHT), new Vector2(rand.nextDouble() * Constants.WINDOW_WIDTH, rand.nextDouble() * Constants.WINDOW_HEIGHT));
 
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(img, null, null);
@@ -56,12 +59,12 @@ public class Frame extends JPanel {
         frame.setTitle("Simulation");
 
         
-        Timer timer = new Timer(Constants.LOOP_TIME, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.repaint(); // Request a repaint (calls paintComponent later)
-            }
-        });
-        timer.start(); // Start the "draw loop"
+        // Timer timer = new Timer(Constants.LOOP_TIME, new ActionListener() {
+        //     @Override
+        //     public void actionPerformed(ActionEvent e) {
+        //         frame.repaint(); // Request a repaint (calls paintComponent later)
+        //     }
+        // });
+        // timer.start(); // Start the "draw loop"
    }
 }
